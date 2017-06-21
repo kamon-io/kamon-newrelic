@@ -27,7 +27,7 @@ import kamon.newrelic.MetricReporter.{PostFailed, PostSucceeded}
 import JsonProtocol._
 import spray.json._
 
-class MetricReporter(settings: AgentSettings) extends Actor with ActorLogging with MyNewRelicClient {
+class MetricReporter(settings: AgentSettings) extends Actor with ActorLogging with KamonNewRelicClient {
   import context.dispatcher
 
   private val config = context.system.settings.config

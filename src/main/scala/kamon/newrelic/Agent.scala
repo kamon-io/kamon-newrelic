@@ -36,11 +36,11 @@ import akka.pattern.pipe
 import scala.concurrent.duration._
 import scala.concurrent.duration.FiniteDuration
 
-trait MyNewRelicClient {
+trait KamonNewRelicClient {
   def getNRClient(): NewRelicClient = new ScalaJClient()
 }
 
-class Agent extends Actor with ActorLogging with MetricsSubscription with MyNewRelicClient {
+class Agent extends Actor with ActorLogging with MetricsSubscription with KamonNewRelicClient {
   import context.dispatcher
 
   private val config = context.system.settings.config
