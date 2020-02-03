@@ -43,7 +43,7 @@ object AttributeBuddy {
 
   def buildCommonAttributes(environment: Environment): Attributes = {
     val attributes = new Attributes()
-      .put("instrumentation.source", "kamon-agent")
+      .put("instrumentation.provider", "kamon-agent")
       .put("service.name", environment.service)
       .put("host", environment.host)
     AttributeBuddy.addTagsFromTagSets(Seq(environment.tags), attributes)
